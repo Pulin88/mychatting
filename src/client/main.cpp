@@ -244,9 +244,9 @@ void readTaskHandler(int clientfd)
         if(ONE_CHAT_MSG == msgtype)
         {
             char output[1024] = {0};
-            snprintf(output, 1024, "%s[%s]%s said: %s",
+            snprintf(output, 1024, "%s[%d]%s said: %s",
             js["time"].get<string>().c_str(),
-            js["id"].get<string>().c_str(),
+            js["id"].get<int>(),
             js["name"].get<string>().c_str(),
             js["msg"].get<string>().c_str());
             cout << output << endl;
@@ -256,10 +256,10 @@ void readTaskHandler(int clientfd)
         if(GROUP_CHAT_MSG == msgtype)
         {
             char output[1024] = {0};
-            snprintf(output, 1024, "groupmsg[%s]:%s[%s]%s said: %s",
-            js["groupid"].get<string>().c_str(),
+            snprintf(output, 1024, "groupmsg[%d]:%s[%d]%s said: %s",
+            js["groupid"].get<int>(),
             js["time"].get<string>().c_str(),
-            js["id"].get<string>().c_str(),
+            js["id"].get<int>(),
             js["name"].get<string>().c_str(),
             js["msg"].get<string>().c_str());
             cout << output << endl;
@@ -366,9 +366,9 @@ void doLoginResponse(json &responsejs)
                 if(ONE_CHAT_MSG == js["msgid"].get<int>())
                 {
                     char output[1024] = {0};
-                    snprintf(output, 1024, "%s[%s]%s said: %s",
+                    snprintf(output, 1024, "%s[%d]%s said: %s",
                     js["time"].get<string>().c_str(),
-                    js["id"].get<string>().c_str(),
+                    js["id"].get<int>(),
                     js["name"].get<string>().c_str(),
                     js["msg"].get<string>().c_str());
                     cout << output << endl;
@@ -376,10 +376,10 @@ void doLoginResponse(json &responsejs)
                 else
                 {
                     char output[1024] = {0};
-                    snprintf(output, 1024, "groupmsg[%s]:%s[%s]%s said: %s",
-                    js["groupid"].get<string>().c_str(),
+                    snprintf(output, 1024, "groupmsg[%d]:%s[%d]%s said: %s",
+                    js["groupid"].get<int>(),
                     js["time"].get<string>().c_str(),
-                    js["id"].get<string>().c_str(),
+                    js["id"].get<int>(),
                     js["name"].get<string>().c_str(),
                     js["msg"].get<string>().c_str());
                     cout << output << endl;
@@ -438,7 +438,7 @@ unordered_map<string,string> commandMap = {
     {"help","显示所有支持的命令,格式help"},
     {"chat","一对一聊天,格式chat:friendid:message"},
     {"addfriend","添加好友,格式addfriend:friendid"},
-    {"creategroup","创建群主,格式creategroup:groupname,groupdesc"},
+    {"creategroup","创建群主,格式creategroup:groupname:groupdesc"},
     {"addgroup","加入群组,格式addgroup:groupid"},
     {"groupchat","群聊,格式groupchat:groupid:message"},
     {"loginout","注销,格式loginout"}
@@ -559,6 +559,15 @@ void creategroupCallback(int clientfd, string str)
      {
          cerr << "send creategroup msg error ->" << buffer << endl; 
      }
+
+     // 通知用户群组id和群组name
+     char msg[128];
+     len = recv(clientfd, msg, 128, 0);
+     if(len == -1)
+     {
+         cerr << "recv creategroup msg error" << endl;
+     }
+     cout << msg << endl;
 }
 
 void addgroupCallback(int clientfd, string str)
