@@ -1,0 +1,3 @@
+/home/pulin/base/Code/chatting-room/test_muduo/test/CMakeFiles/exe.dir
+/home/pulin/base/Code/chatting-room/test_muduo/test/CMakeFiles/edit_cache.dir
+/home/pulin/base/Code/chatting-room/test_muduo/test/CMakeFiles/rebuild_cache.dir

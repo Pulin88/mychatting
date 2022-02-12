@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/chatserver.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/chatserver.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/chatservice.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/chatservice.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/main.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/main.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/db/db.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/db/db.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/db/db.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/model/friendmodel.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/model/friendmodel.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/model/groupmodel.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/model/groupmodel.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/model/offlinemessage.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/model/offlinemessage.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/model/offlinemessage.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/server",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -c /home/pulin/base/Code/chatting-room/src/server/model/usermodel.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/server/model/usermodel.cpp"
+},
+{
+  "directory": "/home/pulin/base/Code/chatting-room/build/src/client",
+  "command": "/usr/bin/g++  -I/home/pulin/base/Code/chatting-room/include -I/home/pulin/base/Code/chatting-room/include/server -I/home/pulin/base/Code/chatting-room/thirdparty -I/home/pulin/base/Code/chatting-room/include/server/db -I/home/pulin/base/Code/chatting-room/include/server/model -g -g -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/pulin/base/Code/chatting-room/src/client/main.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/src/client/main.cpp"
+}
+]

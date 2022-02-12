@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/pulin/base/Code/chatting-room/test/test_muduo/build",
+  "command": "/usr/bin/g++   -g -g -o CMakeFiles/muduo_server.dir/muduo_server.cpp.o -c /home/pulin/base/Code/chatting-room/test/test_muduo/muduo_server.cpp",
+  "file": "/home/pulin/base/Code/chatting-room/test/test_muduo/muduo_server.cpp"
+}
+]
