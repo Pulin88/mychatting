@@ -14,6 +14,7 @@ public:
     bool update(string sql);
     MYSQL_RES *query(string sql);
     MYSQL *getConnection();
+    const char* getErrmsg();
 
 private:
     MYSQL *_conn;

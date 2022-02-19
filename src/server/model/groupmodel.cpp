@@ -22,11 +22,12 @@ bool GroupModel::createGroup(Group &group)
         }
     }
 
+    errmsg = mysql.getErrmsg();
     return false;
 
 }
 // 加入群组
-void GroupModel::addGroup(int userid, int groupid, string role)
+bool GroupModel::addGroup(int userid, int groupid, string role)
 {
     // 组装mysql语句
     char sql[1024];
@@ -37,8 +38,12 @@ void GroupModel::addGroup(int userid, int groupid, string role)
     MySQL mysql;
     if (mysql.connect())
     {
-        mysql.update(sql);
+        if(mysql.update(sql))
+            return true;
     }
+
+    errmsg = mysql.getErrmsg();
+    return false;
 
 }
 // 登录时，显示user所加入的群

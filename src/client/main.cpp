@@ -279,6 +279,36 @@ void readTaskHandler(int clientfd)
             sem_post(&rwsem);
             continue;
         }
+
+        if(CREATE_GROUP_MSG_ACK == msgtype)
+        {
+            if(js.contains("errno"))
+            {
+                cout << "create group error, reasons are as follows" << endl;
+                cout << js["errmsg"] << endl;
+            }
+            else
+            {
+                printf("groupname:%s\n groupid:%d\n please remember firmly\n", 
+                    js["groupname"].get<string>().c_str(), js["groupid"].get<int>());
+            }
+            continue;
+        }
+
+        if(ADD_GROUP_MSG_ACK == msgtype)
+        {
+            if(js.contains("errno"))
+            {
+                cout << "add group error, reasons are as follows" << endl;
+                cout << js["errmsg"] << endl;
+            }
+            else
+            {
+                printf("userid:%d join in groupid:%d successfully",
+                    js["userid"].get<int>(), js["groupid"].get<int>());
+            }
+            continue;
+        }
     }
 }
 
@@ -561,13 +591,23 @@ void creategroupCallback(int clientfd, string str)
      }
 
      // 通知用户群组id和群组name
-     char msg[128];
-     len = recv(clientfd, msg, 128, 0);
+     /* 接收代码写到子线程中去
+     char msg[1024] = {0};
+     len = recv(clientfd, msg, 1024, 0);
      if(len == -1)
      {
          cerr << "recv creategroup msg error" << endl;
      }
-     cout << msg << endl;
+     json jsmsg = json::parse(msg);
+     if(jsmsg.contains("errno"))
+     {
+         cout << jsmsg["errmsg"] << endl;
+     }
+     else
+     {
+        printf("groupname:%s\n groupid:%d\n please remember firmly\n", jsmsg["groupname"].get<string>().c_str(), jsmsg["groupid"].get<int>());
+     }
+     */
 }
 
 void addgroupCallback(int clientfd, string str)

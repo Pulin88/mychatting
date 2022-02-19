@@ -279,9 +279,21 @@ void ChatService::createGroup(const TcpConnectionPtr &conn,
     if(_groupModel.createGroup(group))
     {
         _groupModel.addGroup(userid, group.getId(), "creator");
-        char msg[128];
-        snprintf(msg, 128, "groupname:%s\n groupid:%d\n please remember firmly\n", group.getName().c_str(), group.getId());
-        conn->send(msg, 128); 
+        
+        json response;
+        response["msgid"] = CREATE_GROUP_MSG_ACK;
+        response["groupname"] = group.getName();
+        response["groupid"] = group.getId();
+        conn->send(response.dump()); 
+        
+    }
+    else
+    {
+        json response;
+        response["msgid"] = CREATE_GROUP_MSG_ACK;
+        response["errno"] = 3;
+        response["errmsg"] = _groupModel.getErrmsg();
+        conn->send(response.dump());
     }
 }
 
@@ -291,7 +303,22 @@ void ChatService::addGroup(const TcpConnectionPtr &conn,
 {
     int userid = js["id"].get<int>();
     int groupid = js["groupid"].get<int>();
-    _groupModel.addGroup(userid, groupid, "normal");
+    if(_groupModel.addGroup(userid, groupid, "normal"))
+    {
+        json response;
+        response["msgid"] = ADD_GROUP_MSG_ACK;
+        response["groupid"] = groupid;
+        response["userid"] = userid;
+        conn->send(response.dump());
+    }
+    else
+    {
+        json response;
+        response["msgid"] = ADD_GROUP_MSG_ACK;
+        response["errno"] = 4;
+        response["errmsg"] = _groupModel.getErrmsg();
+        conn->send(response.dump());
+    }
 }
 
 // 群组聊天业务

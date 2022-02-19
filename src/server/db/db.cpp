@@ -75,3 +75,9 @@ MYSQL *MySQL::getConnection()
 {
     return _conn;
 }
+
+//获取错误码
+const char* MySQL::getErrmsg()
+{
+    return mysql_error(_conn);
+}
