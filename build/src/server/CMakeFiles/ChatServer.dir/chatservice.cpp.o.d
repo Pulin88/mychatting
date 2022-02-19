@@ -267,5 +267,10 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /home/pulin/base/Code/chatting-room/include/server/model/groupmodel.hpp \
  /home/pulin/base/Code/chatting-room/include/server/model/group.hpp \
  /home/pulin/base/Code/chatting-room/include/server/model/groupuser.hpp \
+ /home/pulin/base/Code/chatting-room/include/server/redis/redis.hpp \
+ /usr/local/include/hiredis/hiredis.h /usr/local/include/hiredis/read.h \
+ /usr/include/sys/time.h /usr/local/include/hiredis/sds.h \
+ /usr/local/include/hiredis/alloc.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/thread \
  /home/pulin/base/Code/chatting-room/include/public.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h

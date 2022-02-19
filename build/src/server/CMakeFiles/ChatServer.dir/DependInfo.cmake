@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pulin/base/Code/chatting-room/src/server/model/groupmodel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o.d"
   "/home/pulin/base/Code/chatting-room/src/server/model/offlinemessage.cpp" "src/server/CMakeFiles/ChatServer.dir/model/offlinemessage.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/offlinemessage.cpp.o.d"
   "/home/pulin/base/Code/chatting-room/src/server/model/usermodel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.d"
+  "/home/pulin/base/Code/chatting-room/src/server/redis/redis.cpp" "src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.d"
   )
 
 # Targets to which this target links.

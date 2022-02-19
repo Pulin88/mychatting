@@ -8,8 +8,8 @@ net-communication is based on muduo, choosing bussiness process function by anal
 2. GCC >= 4.7
 3. [muduo](https://github.com/chenshuo/muduo)
 4. Boost >= 1.69.0
-5. redis >= 2.8 and hiredis
-6. mysql
+5. redis >= 2.8 and hiredis port:6379
+6. mysql port:3306
 7. nginx
 8. CMake
 

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/bin/cmake
+CMAKE_COMMAND = /usr/local/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/bin/cmake -E rm -f
+RM = /usr/local/cmake/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/cmake/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -322,6 +322,30 @@ model/usermodel.cpp.s:
 	cd /home/pulin/base/Code/chatting-room/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.s
 .PHONY : model/usermodel.cpp.s
 
+redis/redis.o: redis/redis.cpp.o
+.PHONY : redis/redis.o
+
+# target to build an object file
+redis/redis.cpp.o:
+	cd /home/pulin/base/Code/chatting-room/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o
+.PHONY : redis/redis.cpp.o
+
+redis/redis.i: redis/redis.cpp.i
+.PHONY : redis/redis.i
+
+# target to preprocess a source file
+redis/redis.cpp.i:
+	cd /home/pulin/base/Code/chatting-room/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.i
+.PHONY : redis/redis.cpp.i
+
+redis/redis.s: redis/redis.cpp.s
+.PHONY : redis/redis.s
+
+# target to generate assembly for a file
+redis/redis.cpp.s:
+	cd /home/pulin/base/Code/chatting-room/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.s
+.PHONY : redis/redis.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -355,6 +379,9 @@ help:
 	@echo "... model/usermodel.o"
 	@echo "... model/usermodel.i"
 	@echo "... model/usermodel.s"
+	@echo "... redis/redis.o"
+	@echo "... redis/redis.i"
+	@echo "... redis/redis.s"
 .PHONY : help
 
 
