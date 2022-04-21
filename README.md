@@ -22,7 +22,7 @@ stream
     upstream MyServer
     {
         server 127.0.0.1:6000 weight=1 max_fails=3 fail_timeout=30s;
-        server 127.0.0.1:6001 weight=1 max_fails=3 fail_timeout=30s;
+        server 127.0.0.1:6002 weight=1 max_fails=3 fail_timeout=30s;
     }
 
     server
@@ -36,7 +36,8 @@ stream
 ```
 
 ### how to use it?
-1. ` cmake ./build/` in workspaceFolder
-2. `cd ./bin`
-3. `./ChatClient 127.0.0.1 8000` 
-4. `./ChatServer 127.0.0.1 6000` or `./ChatServer 127.0.0.1 6001`
+1. you should assure that the service of nginx:master(80),redis-server(6379),mysqld(3306) are starting.
+2. ` cmake ./build/` in workspaceFolder
+3. `cd ./bin`
+4. `./ChatServer 127.0.0.1 6000` or `./ChatServer 127.0.0.1 6002`
+5. `./ChatClient 127.0.0.1 8000`
