@@ -37,7 +37,7 @@ stream
 
 ### how to use it?
 1. you should assure that the service of nginx:master(80),redis-server(6379),mysqld(3306) are starting.
-2. ` cmake ./build/` in workspaceFolder
-3. `cd ./bin`
+2. ` cmake ./build/` `cd build/` `make` 
+3. `cd ../bin`
 4. `./ChatServer 127.0.0.1 6000` or `./ChatServer 127.0.0.1 6002`
 5. `./ChatClient 127.0.0.1 8000`

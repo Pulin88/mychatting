@@ -304,7 +304,7 @@ void readTaskHandler(int clientfd)
             }
             else
             {
-                printf("userid:%d join in groupid:%d successfully",
+                printf("userid:%d join in groupid:%d successfully\n",
                     js["userid"].get<int>(), js["groupid"].get<int>());
             }
             continue;
