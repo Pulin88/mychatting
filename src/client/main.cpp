@@ -309,6 +309,21 @@ void readTaskHandler(int clientfd)
             }
             continue;
         }
+
+        if(ADD_FRIEND_MSG_ACK == msgtype)
+        {
+            if(js.contains("errno"))
+            {
+                cout << "add friend error, reasons are as follows" << endl;
+                cout << js["errmsg"] << endl;
+            }
+            else
+            {
+                printf("userid:%d add friendid:%d as friend successfully\n",
+                    js["userid"].get<int>(), js["friendid"].get<int>());
+            }
+            continue;
+        }
     }
 }
 
@@ -530,7 +545,7 @@ void addfriendCallback(int clientfd, string str)
     int friendid = atoi(str.c_str());
     json js;
     js["msgid"] = ADD_FRIEND_MSG;
-    js["friendid"] = clientfd;
+    js["friendid"] = friendid;
     js["id"] = g_currentUser.getId();
     string buffer = js.dump();
 

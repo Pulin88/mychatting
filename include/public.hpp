@@ -11,11 +11,12 @@ enum EnMsgType
     REG_MSG_ACK,     //注册响应 errno=2 errmsg=this account is using, input another!
     ONE_CHAT_MSG,    //聊天消息
     ADD_FRIEND_MSG,  //添加好友
+    ADD_FRIEND_MSG_ACK, //添加好友响应  errno=5 errmsg=mysql.getErrmsg()
 
     CREATE_GROUP_MSG,  // 创建群组
-    CREATE_GROUP_MSG_ACK,  // 创建群组响应 errno=3 errmsg=
+    CREATE_GROUP_MSG_ACK,  // 创建群组响应 errno=3 errmsg=mysql.getErrmsg()
     ADD_GROUP_MSG,      // 加入群组
-    ADD_GROUP_MSG_ACK,  // 加入群组响应 errno=4 errmsg=
+    ADD_GROUP_MSG_ACK,  // 加入群组响应 errno=4 errmsg=mysql.getErrmsg()
     GROUP_CHAT_MSG      // 群聊
 };
 

@@ -291,7 +291,22 @@ void ChatService::addFriend(const TcpConnectionPtr &conn,
     int friendid = js["friendid"].get<int>();
 
     // 存储好友信息
-    _friendModel.insert(userid, friendid);
+    if(_friendModel.insert(userid, friendid))
+    {
+        json response;
+        response["msgid"] = ADD_FRIEND_MSG_ACK;
+        response["userid"] = userid;
+        response["friendid"] = friendid;
+        conn->send(response.dump());
+    }
+    else
+    {
+        json response;
+        response["msgid"] = ADD_FRIEND_MSG_ACK;
+        response["errno"] = 5;
+        response["errmsg"] = _friendModel.getErrmsg();
+        conn->send(response.dump());
+    }
 }
 
 // 创建群组业务

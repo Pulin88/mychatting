@@ -2,7 +2,7 @@
 #include "db.h"
 
 // 添加好友关系
-void FriendModel::insert(int userid, int friendid)
+bool FriendModel::insert(int userid, int friendid)
 {
     // 组装mysql语句
     char sql[1024] = {0};
@@ -12,8 +12,12 @@ void FriendModel::insert(int userid, int friendid)
     MySQL mysql;
     if (mysql.connect())
     {
-        mysql.update(sql);
+        if(mysql.update(sql))
+            return true;
     }
+
+    errmsg = mysql.getErrmsg();
+    return false;
 }
 
 // 返回用户好友列表
